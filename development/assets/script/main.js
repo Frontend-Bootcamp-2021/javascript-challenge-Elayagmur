@@ -313,4 +313,22 @@ let data = [
 	}
 ];
 
-console.log('👻', data)
+let group = data.reduce((r, a) => {
+	r[a.group] = [...r[a.group] || [], a];
+	return r; 
+ }, {});
+ console.log("group", group);
+
+ //Document.write(JSON.stringify(group));
+ //if(data.assistant==true){
+ //console.log(data);
+ //}
+		/*const reducedfilter=(data,key,fn) =>
+		data.filter(fn).map(el => 
+		key.reduce((acc,key) =>{
+acc[key]=el[key];
+	return acc;	},
+		{})
+		);
+		console.log(reducedfilter(data,['name','assistant','group']));
+		*/
